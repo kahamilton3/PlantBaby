@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PlantBaby.Models
 {
-    public class PlantBaby
+    public class MyPlantBaby
     {
         public int BabyId { get; set; }
         public string Name { get; set; }
@@ -14,11 +14,11 @@ namespace PlantBaby.Models
         public DateTime DatePlanted { get; set; }
         public DateTime LastWatered { get; set; }
 
-        public PlantBaby()
+        public MyPlantBaby()
         {
         }
 
-        public PlantBaby(string name)
+        public MyPlantBaby(string name)
         {
             Name = name;
         }
