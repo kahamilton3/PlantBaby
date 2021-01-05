@@ -7,7 +7,7 @@ namespace PlantBaby.Models
 {
     public class MyPlantBaby
     {
-        public int BabyId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public PlantType Type { get; set; }
         public int TypeId { get; set; }
