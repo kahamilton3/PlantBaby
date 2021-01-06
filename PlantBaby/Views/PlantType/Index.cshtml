@@ -1,0 +1,12 @@
+﻿@model List<PlantBaby.Models.PlantType>
+
+<div class="text-center">
+    <h1>Plant Types</h1>
+
+    <div class="row">
+        @foreach (PlantType type in Model)
+        {
+            <div class="col-lg-4"><a asp-controller="PlantType" asp-action="About" asp-route-id="@type.Id">@type.Name</a></div>
+        }
+    </div>
+</div>
