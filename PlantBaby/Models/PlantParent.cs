@@ -13,7 +13,8 @@ namespace PlantBaby.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public List<PlantType> SuggestedPlants { get; set; }
-        public List<MyPlantBaby> ActivePlants { get; set; }
+
+        public List<MyPlantBaby> ActivePlants = new List<MyPlantBaby> { };
 
         public PlantParent()
         {

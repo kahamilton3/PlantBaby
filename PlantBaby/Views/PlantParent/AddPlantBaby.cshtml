@@ -1,0 +1,22 @@
+﻿@model PlantBaby.ViewModels.AddPlantBabyViewModel
+
+<h1>Choose your plant!</h1>
+
+<form asp-controller="PlantParent" asp-action="ProcessAddPlantBabyForm" method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="PlantParentId" value="@Model.PlantParent.Id" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PlantBabyName">Plant Baby Name:</label>
+        <input asp-for="PlantBabyName" />
+    </div>
+    <div class="form-group">
+        @foreach (var type in Model.PlantTypes)
+        {
+            <label>@type.Name</label>
+            <input type="radio" name="selectedTypes" value="@type.Id" />
+            <a asp-controller="PlantType" asp-action="About" asp-route-id="@type.Id">About</a><br />
+        }
+    </div>
+    <input type="submit" value="Add Plant Baby" />
+</form>

@@ -13,6 +13,8 @@ namespace PlantBaby.Models
         public int TypeId { get; set; }
         public DateTime DatePlanted { get; set; }
         public DateTime LastWatered { get; set; }
+        public PlantParent PlantParent { get; set; }
+        public int PlantParentId { get; set; }
 
         public MyPlantBaby()
         {

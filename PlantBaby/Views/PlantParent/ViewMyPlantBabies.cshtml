@@ -1,0 +1,25 @@
+﻿@model PlantBaby.ViewModels.ViewMyPlantBabiesViewModel
+
+<div class="text-center">
+    <h1>@Model.PlantParentName's Plant Babies</h1>
+    <p><a asp-controller="PlantParent" asp-action="AddPlantBaby" asp-route-id="@Model.PlantParentId">Add Another Plant Baby</a></p>
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Date Planted</th>
+            <th>Last Watered</th>
+        </tr>
+
+        @foreach (var baby in Model.PlantParentActivePlants)
+        {
+            <tr>
+                <td>@baby.Name</td>
+                <td>@baby.Type.Name</td>
+                <td>@baby.DatePlanted</td>
+                <td>@baby.LastWatered</td>
+            </tr>
+        }
+    </table>
+</div>

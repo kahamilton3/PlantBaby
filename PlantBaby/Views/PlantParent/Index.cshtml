@@ -1,3 +1,5 @@
 ﻿@model PlantBaby.Models.PlantParent
 
 <h1>Congratulations on becoming a new Plant Parent, @Model.Name!</h1>
+
+<p><a asp-controller="PlantParent" asp-action="AddPlantBaby" asp-route-id="@Model.Id">Add a Plant Baby</a></p>
