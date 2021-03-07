@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PlantBaby.Areas.Identity.Data;
+using PlantBaby.Data;
 
 [assembly: HostingStartup(typeof(PlantBaby.Areas.Identity.IdentityHostingStartup))]
 namespace PlantBaby.Areas.Identity
@@ -16,8 +16,8 @@ namespace PlantBaby.Areas.Identity
         {
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<PlantDbContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("PlantDbContextConnection")));
+                    options.UseMySql(
+                        context.Configuration.GetConnectionString("DefaultConnection")));
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<PlantDbContext>();
